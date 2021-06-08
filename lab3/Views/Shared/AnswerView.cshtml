@@ -1,0 +1,18 @@
+﻿@model lab3.Models.MyModelAnswer
+
+@{
+    ViewData["Title"] = "AnswerView";
+}
+
+<h1>Quiz results</h1>
+<div>
+    <h2>Right Answers @Model.correct out @Model.answers.Count </h2>
+    <ul>
+        @foreach (var m in Model.answers)
+        {
+            <li style="list-style-type: none;">
+                @m.num1 @m.oper @m.num2 = @m.answer
+            </li>
+        }
+    </ul>
+</div>

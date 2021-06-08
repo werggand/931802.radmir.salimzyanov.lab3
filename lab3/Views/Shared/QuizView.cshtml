@@ -1,0 +1,20 @@
+﻿@model lab3.Models.MyModelQuiz
+
+@{
+    ViewData["Title"] = "QuizView";
+}
+
+<h1>Quiz</h1>
+<div>
+    <h2>@Model.num1  @Model.oper @Model.num2 = ?</h2>
+    <form asp-antiforgery="true" asp-action="QuizView" asp-controller="My" method="post">
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <input name="answer" type="text">  <span asp-validation-for="answer"></span>
+        <br />
+        <input type="submit" value="Next" name="Action" style="border: 0.5px solid rgba(0, 0, 0, 0.56); padding: 4px 12px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; background: white; margin-top:10px;">
+        <input type="submit" value="Finish" name="Action" style="border: 0.5px solid rgba(0, 0, 0, 0.56); padding: 4px 12px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; background: white; margin-top:10px;">
+        <input style="display:none" name="num1" value="@Model.num1">
+        <input style="display:none" name="oper" value="@Model.oper">
+        <input style="display:none" name="num2" value="@Model.num2">
+    </form>
+</div>
